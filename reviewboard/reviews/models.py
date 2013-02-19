@@ -1378,6 +1378,7 @@ class BaseComment(models.Model):
                                  verbose_name=_("reply to"))
     timestamp = models.DateTimeField(_('timestamp'), default=timezone.now)
     text = models.TextField(_("comment text"))
+    rich_text = models.BooleanField(_("rich text"), default=True)
 
     # Set this up with a ConcurrencyManager to help prevent race conditions.
     objects = ConcurrencyManager()
@@ -1586,6 +1587,7 @@ class Review(models.Model):
                                         blank=True, null=True)
     time_emailed = models.DateTimeField(_("time e-mailed"), null=True,
                                         default=None, blank=True)
+    rich_text = models.BooleanField(_("rich text"), default=True)
 
     body_top = models.TextField(_("body (top)"), blank=True,
         help_text=_("The review text shown above the diff and screenshot "
