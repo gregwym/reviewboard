@@ -90,7 +90,11 @@
  </div>
  <div class="banners"></div>
  <div class="body">
-   <div class="body_top reviewtext">{{entry.review.body_top|safe}}</div>
+{% if entry.review.rich_text %}
+  <div class="body_top reviewtext">{{entry.review.body_top|safe}}</div>
+{% else %}
+  <pre class="body_top reviewtext">{{entry.review.body_top|escape}}</pre>
+{% endif %}
    {% reply_section entry "" "body_top" "rcbt" %}
 {% if entry.comments.diff_comments or entry.comments.screenshot_comments or entry.comments.file_attachment_comments %}
    <dl class="diff-comments">
