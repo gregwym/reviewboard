@@ -466,7 +466,6 @@ def review_detail(request,
                 state = ''
 
             # Treat review.body_top as Markdown and convert to HTML
-            # TODO: disable markdown upon user's/review's preference
             if review.rich_text:
                 review.body_top = markdown.markdown(review.body_top,
                     ['codehilite']
