@@ -91,7 +91,7 @@
  <div class="banners"></div>
  <div class="body">
 {% if entry.review.rich_text %}
-  <div class="body_top reviewtext">{{entry.review.body_top|safe}}</div>
+  <div class="body_top reviewtext rich-text">{{entry.review.body_top|safe}}</div>
 {% else %}
   <pre class="body_top reviewtext">{{entry.review.body_top|escape}}</pre>
 {% endif %}
