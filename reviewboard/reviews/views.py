@@ -1,6 +1,7 @@
 import copy
 import logging
 import time
+import markdown
 
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -60,7 +61,6 @@ from reviewboard.site.models import LocalSite
 from reviewboard.ssh.errors import SSHError
 from reviewboard.webapi.encoder import status_to_string
 
-import markdown
 
 #####
 ##### Helper functions
