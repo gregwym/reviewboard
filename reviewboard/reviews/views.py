@@ -468,8 +468,7 @@ def review_detail(request,
             # Treat review.body_top as Markdown and convert to HTML
             if review.rich_text:
                 review.body_top = markdown.markdown(review.body_top,
-                    ['codehilite']
-                )
+                                                    ['codehilite'])
 
             entry = {
                 'review': review,
