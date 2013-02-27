@@ -1,7 +1,6 @@
 import copy
 import logging
 import time
-import markdown
 
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -464,11 +463,6 @@ def review_detail(request,
             # Mark as expanded if there is a reply newer than last_visited
             if latest_reply and last_visited and last_visited < latest_reply:
                 state = ''
-
-            # Treat review.body_top as Markdown and convert to HTML
-            if review.rich_text:
-                review.body_top = markdown.markdown(review.body_top,
-                                                    ['codehilite'])
 
             entry = {
                 'review': review,
