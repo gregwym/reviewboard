@@ -251,6 +251,7 @@ class BaseReviewRequestDetails(models.Model):
     testing_done = models.TextField(_("testing done"), blank=True)
     bugs_closed = models.CharField(_("bugs"), max_length=300, blank=True)
     branch = models.CharField(_("branch"), max_length=300, blank=True)
+    rich_text = models.BooleanField(_("rich text"), default=True)
 
     def _get_review_request(self):
         raise NotImplementedError
