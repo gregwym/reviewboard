@@ -300,6 +300,26 @@
 {% localtime off %}
 <script type="text/javascript">
   $(document).ready(function() {
+    /* Render rich-text */
+    marked.setOptions({
+      gfm: true,
+      tables: true,
+      breaks: true,
+      pedantic: false,
+      sanitize: true,
+      smartLists: true,
+      langPrefix: 'language-',
+      highlight: function(code, lang) {
+        return prettyPrintOne(code, lang, true);
+      }
+    });
+
+    $.each($(".rich-text"), function(index, obj) {
+      $(obj).html(marked($(obj).html()));
+    });
+  });
+
+  $(document).ready(function() {
 	  /* Listen for updates to this review request. */
 	  RB.registerForUpdates("{{last_activity_time|date:"c"}}");
 {% endlocaltime %}
