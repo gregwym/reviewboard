@@ -381,6 +381,13 @@ PIPELINE_JS = {
         ),
         'output_filename': 'rb/js/repositoryform.min.js',
     },
+    'markdown': {
+        'source_filenames': (
+            'lib/js/google-code-prettify/prettify.js',
+            'lib/js/marked.js',
+        ),
+        'output_filename': 'rb/js/markdown.min.js',
+    },
 }
 
 PIPELINE_CSS = {
@@ -416,6 +423,13 @@ PIPELINE_CSS = {
             'rb/css/admin-dashboard.less',
         ),
         'output_filename': 'rb/css/admin.min.css',
+        'absolute_paths': False,
+    },
+    'markdown': {
+        'source_filenames': (
+            'lib/css/prettify.css',
+        ),
+        'output_filename': 'rb/css/markdown.min.css',
         'absolute_paths': False,
     },
 }
