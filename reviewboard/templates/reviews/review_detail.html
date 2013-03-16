@@ -230,7 +230,19 @@
    </dl>
 {% endif %}
   {% if entry.review.body_bottom %}
+  {%   if entry.review.rich_text %}
+  {%     autoescape off %}
+   <div style="display:none" id="review-body-bottom-{{entry.review.id}}">{{entry.review.body_bottom}}</div>
+   <div class="body_bottom reviewtext rich-text">
+    <script type="text/javascript">
+      document.write(marked($('#review-body-bottom-{{entry.review.id}}').html()));
+      $('#review-body-bottom-{{entry.review.id}}').remove();
+    </script>
+   </div>
+  {%     endautoescape %}
+  {%   else %}
    <pre class="body_bottom reviewtext">{{entry.review.body_bottom|escape}}</pre>
+  {%   endif %}
    {% reply_section entry "" "body_bottom" "rcbb" %}
   {% endif %}
  </div><!-- body -->
