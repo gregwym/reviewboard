@@ -254,7 +254,8 @@ def reply_list(context, entry, comment, context_type, context_id):
             'timestamp': timestamp,
             'text': text,
             'reply_user': reply.user,
-            'draft': not reply.public
+            'draft': not reply.public,
+            'rich_text': reply.rich_text,
         })
         return render_to_string('reviews/review_reply.html', new_context)
 
