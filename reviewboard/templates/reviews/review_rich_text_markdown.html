@@ -7,7 +7,7 @@
 {% endautoescape %}
 <script type="text/javascript">
   document.write('<pre id="{{dom_id}}" class="{{dom_classes}}">');
-  document.write(marked($('#{{dom_id}}-markdown').html()));
+  document.write(marked($('#{{dom_id}}-markdown').text()));
   document.write('</pre>');
   $('#{{dom_id}}-markdown').remove();
 </script>
