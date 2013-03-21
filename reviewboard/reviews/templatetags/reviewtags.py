@@ -606,4 +606,4 @@ def rich_text_markdown(dom_id, dom_classes, raw_text):
         'dom_id': dom_id,
         'dom_classes': dom_classes,
         'raw_text': raw_text,
-    });
+    })
