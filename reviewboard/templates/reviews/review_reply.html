@@ -1,6 +1,7 @@
 {% load djblets_utils %}
 {% load i18n %}
 {% load tz %}
+{% load reviewtags %}
    <li class="reply-comment{% if draft %} draft" id="yourcomment_{{context_id}}-{{id}}-item{% endif %}">
     <dl>
      <dt>
@@ -11,15 +12,9 @@
      </dt>
      <dd>
 {% if rich_text %}
-{%   autoescape off %}
-      <div style="display:none" id="reply-comment-{{context_id}}-{{id}}">{{text}}</div>
-      <div id="{% if draft %}your{% endif %}comment_{{context_id}}-{{id}}" class="reviewtext rich-text">
-       <script type="text/javascript">
-         document.write(marked($('#reply-comment-{{context_id}}-{{id}}').html()));
-         $('#reply-comment-{{context_id}}-{{id}}').remove();
-       </script>
-      </div>
-{%   endautoescape %}
+{%  definevar "rich_text_id" %}{% if draft %}your{% endif %}comment_{{context_id}}-{{id}}{% enddefinevar %}
+{%  definevar "rich_text_classes" %}reviewtext rich-text{% enddefinevar %}
+{%  rich_text_markdown rich_text_id rich_text_classes text %}
 {% else %}
       <pre id="{% if draft %}your{% endif %}comment_{{context_id}}-{{id}}" class="reviewtext">{{text|escape}}</pre>
 {% endif %}
