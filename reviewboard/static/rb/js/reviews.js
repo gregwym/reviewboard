@@ -156,7 +156,7 @@ function linkifyText(text) {
             });
     }
 
-    return text;
+    return text.htmlDecode();
 }
 
 
@@ -1745,7 +1745,7 @@ $(document).ready(function() {
     });
 
     $("pre.reviewtext, #description, #testing_done").each(function() {
-        $(this).html(linkifyText($(this).text()));
+        $(this).html(linkifyText($(this).html()));
     });
 
     /* Toggle the state of a review */

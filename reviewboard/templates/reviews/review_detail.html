@@ -92,13 +92,13 @@
  <div class="body">
 {% if entry.review.rich_text %}
 {%   autoescape off %}
-  <div style="display:none" id="review-body-top-{{entry.review.id}}">{{entry.review.body_top}}</div>
-  <div class="body_top reviewtext rich-text">
-   <script type="text/javascript">
-     document.write(marked($('#review-body-top-{{entry.review.id}}').html()));
-     $('#review-body-top-{{entry.review.id}}').remove();
-   </script>
-  </div>
+  <pre style="display:none" id="review-body-top-{{entry.review.id}}">{{entry.review.body_top}}</pre>
+  <script type="text/javascript">
+    document.write('<pre class="body_top reviewtext rich-text">');
+    document.write(marked($('#review-body-top-{{entry.review.id}}').text()));
+    document.write('</pre>');
+    $('#review-body-top-{{entry.review.id}}').remove();
+  </script>
 {%   endautoescape %}
 {% else %}
   <pre class="body_top reviewtext">{{entry.review.body_top|escape}}</pre>
