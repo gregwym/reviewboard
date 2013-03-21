@@ -92,7 +92,7 @@
  <div class="body">
 {% if entry.review.rich_text %}
 {%  definevar "rich_text_id" %}review-body-top-{{entry.review.id}}{% enddefinevar %}
-{%  definevar "rich_text_classes" %}body_top reviewtext rich-text{% enddefinevar %}
+{%  definevar "rich_text_classes" %}body_top reviewtext{% enddefinevar %}
 {%  rich_text_markdown rich_text_id rich_text_classes entry.review.body_top %}
 {% else %}
   <pre class="body_top reviewtext">{{entry.review.body_top|escape}}</pre>
@@ -191,7 +191,7 @@
     <dd>
 {% if comment.rich_text %}
 {%  definevar "rich_text_id" %}{{comment.anchor_prefix}}{{comment.id}}{% enddefinevar %}
-{%  definevar "rich_text_classes" %}reviewtext comment-text rich-text{% enddefinevar %}
+{%  definevar "rich_text_classes" %}reviewtext comment-text{% enddefinevar %}
 {%  rich_text_markdown rich_text_id rich_text_classes comment.text %}
 {% else %}
      <pre class="reviewtext comment-text" id="{{comment.anchor_prefix}}{{comment.id}}">{{comment.text|escape}}</pre>
@@ -220,7 +220,7 @@
   {% if entry.review.body_bottom %}
   {%  if entry.review.rich_text %}
   {%   definevar "rich_text_id" %}review-body-bottom-{{entry.review.id}}{% enddefinevar %}
-  {%   definevar "rich_text_classes" %}body_bottom reviewtext rich-text{% enddefinevar %}
+  {%   definevar "rich_text_classes" %}body_bottom reviewtext{% enddefinevar %}
   {%   rich_text_markdown rich_text_id rich_text_classes entry.review.body_bottom %}
   {%  else %}
    <pre class="body_bottom reviewtext">{{entry.review.body_bottom|escape}}</pre>
