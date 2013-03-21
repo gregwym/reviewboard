@@ -594,3 +594,16 @@ def comment_issue(context, review_request, comment, comment_type):
 def pretty_print_issue_status(status):
     """Turns an issue status code into a human-readable status string."""
     return BaseComment.issue_status_to_string(status)
+
+
+@register.simple_tag
+def rich_text_markdown(dom_id, dom_classes, raw_text):
+    """
+    Generate markdown rendering code for the raw_text
+    """
+
+    return render_to_string('reviews/review_rich_text_markdown.html', {
+        'dom_id': dom_id,
+        'dom_classes': dom_classes,
+        'raw_text': raw_text,
+    });

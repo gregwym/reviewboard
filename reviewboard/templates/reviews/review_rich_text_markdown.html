@@ -1,0 +1,13 @@
+{% load djblets_utils %}
+{% load i18n %}
+{% load tz %}
+
+{% autoescape off %}
+<pre style="display:none" id="{{dom_id}}-markdown">{{raw_text}}</pre>
+{% endautoescape %}
+<script type="text/javascript">
+  document.write('<pre id="{{dom_id}}" class="{{dom_classes}}">');
+  document.write(marked($('#{{dom_id}}-markdown').html()));
+  document.write('</pre>');
+  $('#{{dom_id}}-markdown').remove();
+</script>

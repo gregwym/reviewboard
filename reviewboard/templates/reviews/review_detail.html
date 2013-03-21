@@ -91,15 +91,9 @@
  <div class="banners"></div>
  <div class="body">
 {% if entry.review.rich_text %}
-{%   autoescape off %}
-  <pre style="display:none" id="review-body-top-{{entry.review.id}}">{{entry.review.body_top}}</pre>
-  <script type="text/javascript">
-    document.write('<pre class="body_top reviewtext rich-text">');
-    document.write(marked($('#review-body-top-{{entry.review.id}}').text()));
-    document.write('</pre>');
-    $('#review-body-top-{{entry.review.id}}').remove();
-  </script>
-{%   endautoescape %}
+{%  definevar "rich_text_id" %}review-body-top-{{entry.review.id}}{% enddefinevar %}
+{%  definevar "rich_text_classes" %}body_top reviewtext{% enddefinevar %}
+{%  rich_text_markdown rich_text_id rich_text_classes entry.review.body_top %}
 {% else %}
   <pre class="body_top reviewtext">{{entry.review.body_top|escape}}</pre>
 {% endif %}
