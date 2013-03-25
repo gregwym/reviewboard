@@ -156,7 +156,7 @@ function linkifyText(text) {
             });
     }
 
-    return text.htmlDecode();
+    return text;
 }
 
 
