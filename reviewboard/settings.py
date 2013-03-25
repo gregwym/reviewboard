@@ -385,6 +385,7 @@ PIPELINE_JS = {
         'source_filenames': (
             'lib/js/google-code-prettify/prettify.js',
             'lib/js/marked.js',
+            'rb/js/utils/textUtils.js',
         ),
         'output_filename': 'rb/js/text.min.js',
     },
