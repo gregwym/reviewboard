@@ -16,26 +16,11 @@
 
 {% block css %}
 {% compressed_css "reviews" %}
-{% compressed_css "markdown" %}
+{% compressed_css "text" %}
 {% endblock %}
 
 {% block scripts %}
-{% compressed_js "markdown" %}
-<script type="text/javascript">
-marked.setOptions({
-  gfm: true,
-  tables: true,
-  breaks: true,
-  pedantic: false,
-  sanitize: false,
-  smartLists: true,
-  langPrefix: 'language-',
-  highlight: function(code, lang) {
-    // Use google code prettify to render syntax highlight with line num.
-    return prettyPrintOne(code, lang, true);
-  }
-});
-</script>
+{% compressed_js "text" %}
 {% endblock %}
 
 {% block scripts-post %}
