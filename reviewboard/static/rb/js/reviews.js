@@ -1744,7 +1744,8 @@ $(document).ready(function() {
             });
     });
 
-    $("pre.reviewtext, #description, #testing_done").each(function() {
+    $("pre.reviewtext:not(.rich-text), #description:not(.rich-text),\
+      #testing_done:not(.rich-text)").each(function() {
         $(this).html(linkifyText($(this).html()));
     });
 
