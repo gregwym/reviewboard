@@ -602,7 +602,7 @@ def rich_text_markdown(dom_id, dom_classes, raw_text):
     Generate markdown rendering code for the raw_text
     """
 
-    return render_to_string('reviews/review_rich_text_markdown.html', {
+    return render_to_string('reviews/review_text_block.html', {
         'dom_id': dom_id,
         'dom_classes': dom_classes,
         'raw_text': raw_text,
