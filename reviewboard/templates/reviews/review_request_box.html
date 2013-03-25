@@ -138,23 +138,15 @@
 
  <div class="content" id="description-value-cell">
   <label for="description">{% trans "Description" %}:</label>
-{%  if review_request.rich_text %}
-{%   definevar "rich_text_id" %}description{% enddefinevar %}
-{%   definevar "rich_text_classes" %}editable required{% enddefinevar %}
-{%   rich_text_markdown rich_text_id rich_text_classes review_request_details.description %}
-{%  else %}
-  <pre id="description" class="editable required">{{review_request_details.description|escape}}</pre>
-{%  endif %}
+{% definevar "rich_text_id" %}description{% enddefinevar %}
+{% definevar "rich_text_classes" %}editable required{% enddefinevar %}
+{% review_text_block rich_text_id rich_text_classes review_request_details.description review_request.rich_text %}
  </div>
  <div class="content" id="testing-done-value-cell">
   <label for="testing_done">{% trans "Testing Done" %}:</label>
-{%  if review_request.rich_text %}
-{%   definevar "rich_text_id" %}testing_done{% enddefinevar %}
-{%   definevar "rich_text_classes" %}editable{% enddefinevar %}
-{%   rich_text_markdown rich_text_id rich_text_classes review_request_details.testing_done %}
-{%  else %}
-  <pre id="testing_done" class="editable">{{review_request_details.testing_done|escape}}</pre>
-{%  endif %}
+{% definevar "rich_text_id" %}testing_done{% enddefinevar %}
+{% definevar "rich_text_classes" %}editable{% enddefinevar %}
+{% review_text_block rich_text_id rich_text_classes review_request_details.testing_done review_request.rich_text %}
  </div>
 {% if request.user.pk == review_request.submitter_id or perms.reviews.can_edit_reviewrequest %}
  <div class="content" id="required-field-legend"><span class="required-flag">*</span> {% trans "Required Field" %}</div>
