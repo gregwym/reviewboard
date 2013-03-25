@@ -6,7 +6,7 @@
 <pre style="display:none" id="{{dom_id}}-raw">{{raw_text|escape}}</pre>
 <script type="text/javascript">
   document.write('<pre id="{{dom_id}}" class="{{dom_classes}} rich-text">');
-  document.write(marked($('#{{dom_id}}-raw').text()));
+  document.write(marked(linkifyBugNumbers(linkifyReviewRequests($('#{{dom_id}}-raw').text()))));
   document.write('</pre>');
   $('#{{dom_id}}-markdown').remove();
 </script>
