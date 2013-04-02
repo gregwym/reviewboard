@@ -429,6 +429,7 @@ PIPELINE_CSS = {
     'text': {
         'source_filenames': (
             'lib/css/prettify.css',
+            'rb/css/richtext.css',
         ),
         'output_filename': 'rb/css/text.min.css',
         'absolute_paths': False,
