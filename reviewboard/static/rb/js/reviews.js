@@ -96,7 +96,7 @@ function urlizeList(list, urlFunc, textFunc, postProcessFunc) {
 
 
 /*
- * Linkifies a block of text, turning URLs, /r/#/ paths, nad bug numbers
+ * Linkifies a block of text, turning URLs, /r/#/ paths, and bug numbers
  * into clickable links.
  *
  * @param {string} text  The text to linkify.
@@ -1745,7 +1745,7 @@ $(document).ready(function() {
     });
 
     $("pre.reviewtext:not(.rich-text), #description:not(.rich-text),\
-      #testing_done:not(.rich-text)").each(function() {
+       #testing_done:not(.rich-text)").each(function() {
         $(this).html(linkifyText($(this).html()));
     });
 

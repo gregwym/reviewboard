@@ -74,7 +74,7 @@ function linkifyBugNumbers(text) {
 }
 
 /*
- * Linkifies a block of text, turning URLs, /r/#/ paths, nad bug numbers
+ * Linkifies a block of text, turning URLs, /r/#/ paths, and bug numbers
  * into clickable links.
  *
  * @param {string} text  The text to linkify.
@@ -82,8 +82,6 @@ function linkifyBugNumbers(text) {
  * @returns {string} The resulting HTML.
  */
 function linkify(text) {
-    // text = text.htmlEncode();
-
     /* Linkify all URLs. */
     text = linkifyURLs(text);
 
