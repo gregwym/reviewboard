@@ -138,15 +138,15 @@
 
  <div class="content" id="description-value-cell">
   <label for="description">{% trans "Description" %}:</label>
-{% definevar "rich_text_id" %}description{% enddefinevar %}
-{% definevar "rich_text_classes" %}editable required{% enddefinevar %}
-{% review_text_block rich_text_id rich_text_classes review_request_details.description review_request.rich_text %}
+{% definevar "text_block_id" %}description{% enddefinevar %}
+{% definevar "text_block_classes" %}editable required{% enddefinevar %}
+{% review_text_block text_block_id text_block_classes review_request_details.description review_request.rich_text %}
  </div>
  <div class="content" id="testing-done-value-cell">
   <label for="testing_done">{% trans "Testing Done" %}:</label>
-{% definevar "rich_text_id" %}testing_done{% enddefinevar %}
-{% definevar "rich_text_classes" %}editable{% enddefinevar %}
-{% review_text_block rich_text_id rich_text_classes review_request_details.testing_done review_request.rich_text %}
+{% definevar "text_block_id" %}testing_done{% enddefinevar %}
+{% definevar "text_block_classes" %}editable{% enddefinevar %}
+{% review_text_block text_block_id text_block_classes review_request_details.testing_done review_request.rich_text %}
  </div>
 {% if request.user.pk == review_request.submitter_id or perms.reviews.can_edit_reviewrequest %}
  <div class="content" id="required-field-legend"><span class="required-flag">*</span> {% trans "Required Field" %}</div>

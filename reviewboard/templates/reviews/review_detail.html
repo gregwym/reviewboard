@@ -90,9 +90,9 @@
  </div>
  <div class="banners"></div>
  <div class="body">
-{% definevar "rich_text_id" %}review-body-top-{{entry.review.id}}{% enddefinevar %}
-{% definevar "rich_text_classes" %}body_top reviewtext{% enddefinevar %}
-{% review_text_block rich_text_id rich_text_classes entry.review.body_top entry.review.rich_text %}
+{% definevar "text_block_id" %}review-body-top-{{entry.review.id}}{% enddefinevar %}
+{% definevar "text_block_classes" %}body_top reviewtext{% enddefinevar %}
+{% review_text_block text_block_id text_block_classes entry.review.body_top entry.review.rich_text %}
    {% reply_section entry "" "body_top" "rcbt" %}
 {% if entry.comments.diff_comments or entry.comments.screenshot_comments or entry.comments.file_attachment_comments %}
    <dl class="diff-comments">
@@ -185,9 +185,9 @@
      </div>
     </dt>
     <dd>
-{% definevar "rich_text_id" %}{{comment.anchor_prefix}}{{comment.id}}{% enddefinevar %}
-{% definevar "rich_text_classes" %}reviewtext comment-text{% enddefinevar %}
-{% review_text_block rich_text_id rich_text_classes comment.text comment.rich_text %}
+{% definevar "text_block_id" %}{{comment.anchor_prefix}}{{comment.id}}{% enddefinevar %}
+{% definevar "text_block_classes" %}reviewtext comment-text{% enddefinevar %}
+{% review_text_block text_block_id text_block_classes comment.text comment.rich_text %}
 {% if comment.issue_opened %}
      <div id="comment-{{comment.comment_type}}-{{comment.id}}-issue" class="issue-indicator">
        {% comment_issue review_request_details comment "diff_comments" %}
@@ -210,9 +210,9 @@
    </dl>
 {% endif %}
   {% if entry.review.body_bottom %}
-  {%  definevar "rich_text_id" %}review-body-bottom-{{entry.review.id}}{% enddefinevar %}
-  {%  definevar "rich_text_classes" %}body_bottom reviewtext{% enddefinevar %}
-  {%  review_text_block rich_text_id rich_text_classes entry.review.body_bottom entry.review.rich_text %}
+  {%  definevar "text_block_id" %}review-body-bottom-{{entry.review.id}}{% enddefinevar %}
+  {%  definevar "text_block_classes" %}body_bottom reviewtext{% enddefinevar %}
+  {%  review_text_block text_block_id text_block_classes entry.review.body_bottom entry.review.rich_text %}
   {%  reply_section entry "" "body_bottom" "rcbb" %}
   {% endif %}
  </div><!-- body -->

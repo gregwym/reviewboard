@@ -597,14 +597,14 @@ def pretty_print_issue_status(status):
 
 
 @register.simple_tag
-def review_text_block(dom_id, dom_classes, raw_text, rich_text):
+def review_text_block(text_block_id, text_block_classes, raw_text, rich_text):
     """
     Generate text block for the given raw_text
     """
 
     return render_to_string('reviews/review_text_block.html', {
-        'dom_id': dom_id,
-        'dom_classes': dom_classes,
+        'text_block_id': text_block_id,
+        'text_block_classes': text_block_classes,
         'raw_text': raw_text,
         'rich_text': rich_text,
     })

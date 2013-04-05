@@ -11,9 +11,9 @@
       </label>
      </dt>
      <dd>
-{% definevar "rich_text_id" %}{% if draft %}your{% endif %}comment_{{context_id}}-{{id}}{% enddefinevar %}
-{% definevar "rich_text_classes" %}reviewtext{% enddefinevar %}
-{% review_text_block rich_text_id rich_text_classes text rich_text %}
+{% definevar "text_block_id" %}{% if draft %}your{% endif %}comment_{{context_id}}-{{id}}{% enddefinevar %}
+{% definevar "text_block_classes" %}reviewtext{% enddefinevar %}
+{% review_text_block text_block_id text_block_classes text rich_text %}
      </dd>
     </dl>
    </li>

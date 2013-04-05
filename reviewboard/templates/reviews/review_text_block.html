@@ -3,13 +3,12 @@
 {% load tz %}
 
 {% if rich_text %}
-<pre style="display:none" id="{{dom_id}}-raw">{{raw_text|escape}}</pre>
+<pre style="display:none" id="{{text_block_id}}-raw">{{raw_text|escape}}</pre>
 <script type="text/javascript">
-  document.write('<pre id="{{dom_id}}" class="{{dom_classes}} rich-text">');
-  document.write(marked(linkifyBugNumbers(linkifyReviewRequests($('#{{dom_id}}-raw').text()))));
+  document.write('<pre id="{{text_block_id}}" class="{{text_block_classes}} rich-text">');
+  document.write(marked(linkifyBugNumbers(linkifyReviewRequests($('#{{text_block_id}}-raw').text()))));
   document.write('</pre>');
-  $('#{{dom_id}}-markdown').remove();
 </script>
 {% else %}
-<pre id="{{dom_id}}" class="{{dom_classes}}">{{raw_text|escape}}</pre>
+<pre id="{{text_block_id}}" class="{{text_block_classes}}">{{raw_text|escape}}</pre>
 {% endif %}
