@@ -14,5 +14,4 @@ SEQUENCE = [
     'file_attachment_comment_extra_data',
     'review_request_last_review_activity_timestamp',
     'rich_text',
-    'rich_text_file_attach_comment',
 ]
